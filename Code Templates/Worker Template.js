@@ -6,18 +6,18 @@
 	Inspired by:
 	http://servicenowcookbook.com/w/index.php/Creating_Background_Processes
 	
-	OOTB Caller (see checkSMTP): https://d3manageddev.service-now.com/nav_to.do?uri=sys_script_include.do?sys_id=151a8bce97410100715a390ddd2975c3
-	OOTB Worker: https://d3manageddev.service-now.com/nav_to.do?uri=sys_script_include.do?sys_id=f618a4560a0005fc00241045226973a4
+	OOTB Caller (see checkSMTP): https://yourinstancename.service-now.com/nav_to.do?uri=sys_script_include.do?sys_id=151a8bce97410100715a390ddd2975c3
+	OOTB Worker: https://yourinstancename.service-now.com/nav_to.do?uri=sys_script_include.do?sys_id=f618a4560a0005fc00241045226973a4
 	
-	OOTB Worker: https://d3manageddev.service-now.com/nav_to.do?uri=sys_script_include.do?sys_id=e9be19f10a0a0b54003a4347ef53acbb
+	OOTB Worker: https://yourinstancename.service-now.com/nav_to.do?uri=sys_script_include.do?sys_id=e9be19f10a0a0b54003a4347ef53acbb
 	
 	GOLD! AjaxExecutionTracker, AJAX calls for tracking ExecutionTracker objects, which appear to be really similar to Progress Workers. The same, but rebranded?
-	https://d3manageddev.service-now.com/nav_to.do?uri=sys_script_include.do?sys_id=fc262533ff322100956cffffffffff8f
+	https://yourinstancename.service-now.com/nav_to.do?uri=sys_script_include.do?sys_id=fc262533ff322100956cffffffffff8f
 	
 	UI Pages:
-	Monitor a worker: https://d3manageddev.service-now.com/nav_to.do?uri=sys_ui_page.do?sys_id=d8e412320a0a0b69002312e21d081f96
-	Dialog to start & watch a worker: https://d3manageddev.service-now.com/nav_to.do?uri=sys_ui_page.do?sys_id=d90bb7950a0a0b690048008f7018f6fd
-	The UI Macro: https://d3manageddev.service-now.com/nav_to.do?uri=sys_ui_macro.do?sys_id=cdeedebe0a0a0b5000b14a601dba6950
+	Monitor a worker: https://yourinstancename.service-now.com/nav_to.do?uri=sys_ui_page.do?sys_id=d8e412320a0a0b69002312e21d081f96
+	Dialog to start & watch a worker: https://yourinstancename.service-now.com/nav_to.do?uri=sys_ui_page.do?sys_id=d90bb7950a0a0b690048008f7018f6fd
+	The UI Macro: https://yourinstancename.service-now.com/nav_to.do?uri=sys_ui_macro.do?sys_id=cdeedebe0a0a0b5000b14a601dba6950
 	
 	A background progress worker is a block of code that's run, which you don't want to force the user to wait for.
 	Such as previewing an update set or importing data into an import set.
