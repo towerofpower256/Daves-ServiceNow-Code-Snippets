@@ -10,7 +10,8 @@ function CreateHardwareModelCatalogItem(grHardwareModel, sc_category_id) {
 		(new ProductCatalogUtils()).createProductCatalog(
 		gr,
 		sc_category_id,
-		"model" /* type: model, vendor, ??? */,
-		"pc_hardware_cat_item" /* catalog name: pc_hardware_cat_item, pc_software_cat_item, pc_product_cat_item */);
+		"model", /* type: model, vendor, ??? */,
+		"pc_hardware_cat_item" /* catalog name: pc_hardware_cat_item, pc_software_cat_item, pc_product_cat_item */
+		);
 	grHardwareModel.update();
 }
