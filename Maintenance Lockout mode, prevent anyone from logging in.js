@@ -47,14 +47,14 @@ LoginMaintenanceMode.prototype = {
 			ugr.addQuery("roles", "admin");
 			ugr.setLimit(1);
 			ugr.query();
-			if (!ugr.hasNext() || userName == "admin") { //Include the Admin username to prevent irrecoverable lockout, just in case the maintenance messes up the roles 
-				//If no results found, user doesn't have admin. NO LOGIN FOR YOU
-				//this.loginFailed();
-				gs.addErrorMessage("ServiceNow is currently undergoing maintenance and is unavailable");
-				return "login.failed";
-			} else {
+		  	
+			if (ugr.hasNext() || userName != "admin") { //include the admin user account to prevent irrecoverable lockout, just in case the maintenance messes up the roles 
 				//passed admin check and is authed, allow user through
 				return user.getUser(userName);
+			} else {
+				//If no results found, user doesn't have admin. NO LOGIN FOR YOU
+				gs.addErrorMessage("ServiceNow is currently undergoing maintenance and is unavailable");
+				return "login.failed";
 			}
 			
 		  } else {
