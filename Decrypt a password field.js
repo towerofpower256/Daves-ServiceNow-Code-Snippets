@@ -7,12 +7,15 @@ function DecryptPassword(glideElement) {
 	return Encrypter.decrypt(glideElement);
 }
 
-//Takes in a GlideElement in a scoped application, decrypts its value and retunrs it as a string
+// Takes in a GlideElement in a scoped application, decrypts its value and retunrs it as a string
 function DecryptPasswordScoped(scopedGlideElement) {
 	return scopedGlideElement.getDecryptedValue();
 }
 
-//Sets a password field, gotta use setDisplayValue, ServiceNow will encrypt it for you
+// Sets a password field, gotta use setDisplayValue, ServiceNow will encrypt it for you
 function SetPasswordFieldValue(glideElement, passwordValue) {
 	glideElement.setDisplayValue(passwordValue);
 }
+
+// NOTE: if the DecryptPassword function returns just stars ('*' characters), it means that the decryption failed on a system level.
+// Encountered ServiceNow problem PRB1290818, involving the encryption context not being updated as part of a system clone.
