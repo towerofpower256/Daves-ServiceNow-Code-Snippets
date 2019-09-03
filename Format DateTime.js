@@ -5,7 +5,7 @@
 	At current, ServiceNow is not able to do this using ServiceNow functions,
 		this function taps into the Java-native functionality.
 */
-D3U.formatDateTimeString = function(inputValue, inputFormat, inputTzName, outputFormat, outputTzName) {
+function formatDateTimeString(inputValue, inputFormat, inputTzName, outputFormat, outputTzName) {
 	var INTERNAL_DATETIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 	
 	
@@ -29,10 +29,10 @@ D3U.formatDateTimeString = function(inputValue, inputFormat, inputTzName, output
 
 /*
 	Returns the string value of a GlideDateTime object in the specified format and timezone
-	Same as formateDateTimeString, but works with GlideDateTime objects and requires fewer para.meters.
+	Same as formateDateTimeString, but works with GlideDateTime objects and requires fewer parameters.
 */
-D3U.formatDateTimeGDT = function(gdt, outputFormat, tzName) {
+function formatDateTimeGDT(gdt, outputFormat, tzName) {
 	var INTERNAL_DATETIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 	var INTERNAL_DATETIME_TIMEZONE = "GMT";
-	return D3U.formatDateTimeString(gdt.getValue(), INTERNAL_DATETIME_FORMAT, INTERNAL_DATETIME_TIMEZONE, outputFormat, tzName);
+	return formatDateTimeString(gdt.getValue(), INTERNAL_DATETIME_FORMAT, INTERNAL_DATETIME_TIMEZONE, outputFormat, tzName);
 };
