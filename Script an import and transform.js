@@ -5,6 +5,10 @@
 // an import table under a single import set, and run
 // a transform map across the entire set.
 //
+// My use case was to import data from a REST call, parsing a JSON
+// data payload, and importing the data using a transform map instead of
+// "reinventing the wheel" and writing my own import logic.
+//
 // This example import takes in a task number and a randomly generated note.
 // A transform map coalesces on the task and adds the note as 
 // a comment.
