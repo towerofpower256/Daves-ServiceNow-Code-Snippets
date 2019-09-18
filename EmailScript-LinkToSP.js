@@ -10,7 +10,8 @@
 	// Get a service portal URL to this record
 	var pageName = "ticket"; // The service portal page to use, "ticket" by default, could also be "form"
 	var linkText = current.getDisplayValue(); // Use the record's display value as the link text. E.g. INC00123456
-	var url = '<a href="' + gs.getProperty('glide.servlet.uri') + 'sp?id=' + pageName + '&table=' + current.sys_class_name + '&sys_id=' + current.sys_id + '">' + linkText + '</a>';
+	var url = '<a href="' + gs.getProperty('glide.servlet.uri') + 'sp?id=' + pageName +
+	    '&table=' + current.sys_class_name + '&sys_id=' + current.sys_id + '">' + linkText + '</a>';
 
 	// Put the link on the email
 	template.print(url);
