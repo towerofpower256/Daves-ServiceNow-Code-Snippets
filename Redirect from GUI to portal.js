@@ -23,7 +23,7 @@ addLoadEvent(endUserRedirectionCheck);
 
 // The function to redirect users that should be redirected.
 // Default: check when the user opens the home page, 
-//  and redirect them to the default SP if they do not have the 'itil' role.
+//  and redirect them to the default SP if they have not been granted any roles.
 function endUserRedirectionCheck() {
 	
 	// MAIN
@@ -39,7 +39,7 @@ function endUserRedirectionCheck() {
 		if (window.location.href.indexOf("/home.do") > -1) {
 			if (typeof(g_user) == "undefined") return false; // Cannot see g_form, likely within a UI component that we don't care about.
 			
-			return g_user.hasRole('itil') == false;
+			return g_user.hasRoles() == false;
 		}
 		
 		return false;
