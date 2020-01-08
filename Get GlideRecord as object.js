@@ -14,8 +14,16 @@ function getGrObject (gr, fields) {
 			continue;
 		} 
 
-		var fType = ""+gr.getElement(fname).getED().getInternalType();
+		var ed = gr.getElement(fname).getED();
+		var isChoiceField = ed.isChoiceTable();
+		var fType = ""+ed.getInternalType();
 
+		// Choice field
+		if (isChoiceField) {
+			addElement(obj, fname, gr.getValue(fname), gr.getElement(fname).getChoiceValue());
+			continue;
+		}
+		
 		// Boolean
 		if (fType == "boolean") {
 			addElement(obj, fname, Boolean(gr.getValue(fname)), "");
