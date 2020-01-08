@@ -20,13 +20,15 @@ function getGrObject (gr, fields) {
 
 		// Choice field
 		if (isChoiceField) {
+			// There's a special function to get the display value of a choice field
 			addElement(obj, fname, gr.getValue(fname), gr.getElement(fname).getChoiceValue());
 			continue;
 		}
 		
 		// Boolean
 		if (fType == "boolean") {
-			addElement(obj, fname, Boolean(gr.getValue(fname)), "");
+			// Raw boolean values are either a 0 (false) or a 1 (true)
+			addElement(obj, fname, gr.getValue(fname) == 1, "");
 			continue;
 		}
 
