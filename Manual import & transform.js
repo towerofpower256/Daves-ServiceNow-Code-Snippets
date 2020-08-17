@@ -67,11 +67,18 @@ function doTransform(grImportSet) {
 	var importSetRun = new GlideImportSetRun(grImportSet.getUniqueValue());
 	var importLog = new GlideImportLog(importSetRun, grImportSet.data_source.name);
 	
+	// The GlideImportSetTransformer mangles the GlideRecord import set that you feed it.
+	// If you need to use grImportSet for something else (e.g. iterating over a list of import sets),
+	// create an internal version of that import set here. Otherwise, weird things might happen.
+	var _grImportSet = new GlideRecord("sys_import_set");
+	if (!_grImportSet.get(grImportSet.getUniqueValue())) throw "Couldn't create internal GlideRecord of import set before transforming";
+	
 	//Transformin' time
 	var importTransformer = new GlideImportSetTransformer();
+	//importTransformer.setMapID(transformMapSysId); // Use this function to specify the transform map(s) by comma separated sys_id's, if you want to
 	importTransformer.setLogger(importLog);
 	importTransformer.setImportSetRun(importSetRun);
-	importTransformer.transformAllMaps(grImportSet); // <-- The goods happen right here
+	importTransformer.transformAllMaps(_grImportSet); // <-- The goods happen right here
 	
 	grImportSet.state = 'processed';
 	grImportSet.update();
