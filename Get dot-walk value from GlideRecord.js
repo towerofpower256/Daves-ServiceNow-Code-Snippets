@@ -1,7 +1,9 @@
-// Function to get the value of a ServiceNow dot-walking string, like the values used in "Field selector" type fields.
+// Function to get the value of a ServiceNow dot-walking string, like the values used in "Field List" (field_list) type fields.
 // By David McDonald 2020
-// The valuePath is a list of fields, separated by a '.' period.
-// E.g. assigned_to.department.dept_head
+// An example of this type of field is the "Users/Groups in fields" field on notifications, 
+// where it lets you select fields from the targetted table.
+// The valuePath parameter for this function is a list of fields, separated by a '.' period.
+// E.g. "assigned_to.department.dept_head"
 // This function will take that path and try to get the value from a GlideRecord.
 // It works by walking down the objects by the property's name.
 // This works even for invalid paths, because the dot-walking just returns 'undefined',
